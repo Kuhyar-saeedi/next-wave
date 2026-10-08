@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tue 24 Nov · Step 8: the prototype</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314213D'/%3E%3Ccircle cx='16' cy='14' r='6.5' fill='%23E8A33D'/%3E%3Cpath d='M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1' stroke='%23F7F5EF' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <svg class="sun-arc" viewBox="0 0 420 280" aria-hidden="true">
+  <path d="M30 250 A185 205 0 0 1 400 250" fill="none" stroke="#F7F5EF" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <g fill="#F7F5EF" fill-opacity=".35"><circle cx="58" cy="160" r="3"/><circle cx="108" cy="92" r="3"/><circle cx="215" cy="46" r="3"/><circle cx="372" cy="160" r="3"/></g>
+  <circle cx="318" cy="88" r="46" fill="#E8A33D" fill-opacity=".14"/>
+  <circle cx="318" cy="88" r="26" fill="#E8A33D"/>
+  <path d="M10 250 H410" stroke="#F7F5EF" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#2E6F95" fill-opacity=".55"><path d="M120 250 l14-22 h46 l-14 22z"/><path d="M190 250 l14-22 h46 l-14 22z"/><path d="M260 250 l14-22 h46 l-14 22z"/></g>
+</svg>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6.5" fill="#E8A33D"/><path d="M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1" stroke="#F7F5EF" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Next Wave</span></a>
+      <nav class="topnav" aria-label="Main"><a href="../index.html">Timeline</a><a href="../project.html">Whole project</a><button type="button" class="theme-toggle">Dark mode</button></nav>
+    </div>
+    <div class="page-head">
+      <a class="crumb" href="../index.html">&larr; Timeline</a>
+      <h1>Step 8: the prototype</h1>
+      <p class="sub">The Fair Share Simulator: tenants try fairness rules on real-looking families before they vote. Deliverable F.</p>
+      <div class="meta-row"><span class="chip sun">Tue 24 Nov</span><span class="chip" data-countdown="2026-11-24"></span><span class="chip">Project</span></div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <section>
+      <div class="sec-head"><h2 class="sec-title">Materials</h2><p class="sec-note">Everything for this date. Slides open in the browser; press Present for full screen.</p></div>
+      <div class="grid"><a class="card" href="../decks/step8.html"><span class="kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Slides · 6</span><h3>Step 8 — Prototype: Fair Share Simulator</h3><p>What it is, the rules, how we test it</p></a><div class="card soon"><span class="kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Coming soon</span><h3>Fair Share Simulator</h3><p>Interactive prototype, being built</p></div></div>
+    </section>
+    <section>
+      <div class="sec-head"><h2 class="sec-title">What to do</h2></div>
+      <ul class="checklist"><li><label><input type="checkbox" id="c-2026-11-24-0"><span>Try the simulator yourself before class</span></label></li><li><label><input type="checkbox" id="c-2026-11-24-1"><span>Know the four rules: Equal, Need, Effort, Floor</span></label></li><li><label><input type="checkbox" id="c-2026-11-24-2"><span>Be ready to demo one scenario live</span></label></li></ul>
+      <p class="check-note">Ticks are saved in your own browser only.</p>
+    </section>
+    <section><div class="sec-head"><h2 class="sec-title">What the professor asks</h2><p class="sec-note">From the project brief.</p></div><div class="study"><div class="prose"><ul><li>Make one part of the process tangible. The prototype should be usable or testable, not merely described. Explain what you would learn by testing it with real participants.</li></ul></div></div></section>
+    <section>
+      <div class="sec-head"><h2 class="sec-title">Study guide</h2></div>
+      <div class="study"><div class="prose"><h2>In one minute</h2>
+<p>"Fair sharing" is abstract: tenants cannot vote on a formula they cannot see working. The Fair Share Simulator shows, family by family, what each rule would mean in euros. Pick a sunny or cloudy month, mix the rules with sliders, and see each household's share change live, with a plain-words explanation.</p>
+<h2>The four rules</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Idea</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equal</td>
+<td>Same amount for every household</td>
+<td>Simple, ignores need and effort</td>
+</tr>
+<tr>
+<td>Need</td>
+<td>More for low-income or larger households</td>
+<td>Fights energy poverty, needs sensitive data</td>
+</tr>
+<tr>
+<td>Effort</td>
+<td>More for using energy in sunny hours</td>
+<td>Raises the bonus, penalises shift workers</td>
+</tr>
+<tr>
+<td>Floor</td>
+<td>A minimum for everyone, whatever the mix</td>
+<td>Protects those who cannot shift</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Practice questions</h2>
+<details class="q"><summary>What would you learn by testing it?</summary><div>Which rule tenants prefer and whether that changes once they see the effect on others; whether the algorithm is explainable; what data tenants accept to share; whether paper works as well as screen.</div></details></div></div>
+    </section>
+    <section><div class="deck-tools" style="justify-content:space-between"><a class="btn" href="2026-11-18.html">&larr; Wed 18 Nov</a><span></span><a class="btn" href="2026-12-02.html">Wed 2 Dec &rarr;</a></div></section>
+  </div>
+</main>
+<footer><div class="wrap"><span>Next Wave · Hybrid Participation Innovation Lab · Tor Vergata · 2026</span><span>Articles shared under their CC BY 4.0 licences.</span></div></footer>
+</body>
+</html>

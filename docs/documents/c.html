@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>C · Participation Blueprint</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314213D'/%3E%3Ccircle cx='16' cy='14' r='6.5' fill='%23E8A33D'/%3E%3Cpath d='M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1' stroke='%23F7F5EF' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <svg class="sun-arc" viewBox="0 0 420 280" aria-hidden="true">
+  <path d="M30 250 A185 205 0 0 1 400 250" fill="none" stroke="#F7F5EF" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <g fill="#F7F5EF" fill-opacity=".35"><circle cx="58" cy="160" r="3"/><circle cx="108" cy="92" r="3"/><circle cx="215" cy="46" r="3"/><circle cx="372" cy="160" r="3"/></g>
+  <circle cx="318" cy="88" r="46" fill="#E8A33D" fill-opacity=".14"/>
+  <circle cx="318" cy="88" r="26" fill="#E8A33D"/>
+  <path d="M10 250 H410" stroke="#F7F5EF" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#2E6F95" fill-opacity=".55"><path d="M120 250 l14-22 h46 l-14 22z"/><path d="M190 250 l14-22 h46 l-14 22z"/><path d="M260 250 l14-22 h46 l-14 22z"/></g>
+</svg>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6.5" fill="#E8A33D"/><path d="M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1" stroke="#F7F5EF" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Next Wave</span></a>
+      <nav class="topnav" aria-label="Main"><a href="../index.html">Timeline</a><a href="../project.html">Whole project</a><button type="button" class="theme-toggle">Dark mode</button></nav>
+    </div>
+    <div class="page-head">
+      <a class="crumb" href="../dates/2026-11-04.html">&larr; Wed 4 Nov · Steps 5 and 6: methods and hybrid design</a>
+      <h1>C · Participation Blueprint</h1>
+      
+      <div class="meta-row"><span class="chip sun">Deliverable C</span></div>
+    </div>
+  </div>
+</header>
+<main><div class="wrap"><article class="doc-card"><div class="prose"><p>Deliverable C · Hybrid Participation Innovation Lab, Tor Vergata · <strong>Next Wave</strong>: Mahsa Shahi, Kuhyar Saeedi, Farida Safdari, Gelila Tsehaye Melesse, Md Nazmul Islam, Pranto Argha Sarker.</p>
+<p>This blueprint sets out a 9-month hybrid process in which the tenants of a public housing complex in Tor Bella Monaca co-design an AI energy assistant for their solar energy community, including the rule it uses to share money. Tenants decide at four binding gates; every step works on-site and online, and nobody needs a smartphone to take part.</p>
+<h2>1. The participatory challenge</h2>
+<p>The developers' problem is not the final problem. Left to themselves, developers would ask: <em>"How can an AI assistant get tenants to shift their energy use to sunny hours, so the community earns the highest incentive?"</em> That framing hides six assumptions tenants could contest: that they are at home by day, that a bigger incentive is always better, that an app reaches everyone, that an equal split is fair, that sharing home data is harmless, and that tenants are users rather than decision-makers.</p>
+<p>Imagining the voices on our stakeholder map (to be confirmed in the listening phase) shifts the problem:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>From (developers' view)</th>
+<th>To (shared view)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximise the incentive</td>
+<td>Share benefits in a way tenants find fair</td>
+</tr>
+<tr>
+<td>Change tenants' behaviour</td>
+<td>Fit the system to different routines</td>
+</tr>
+<tr>
+<td>Equal split by default</td>
+<td>A fairness rule decided together</td>
+</tr>
+<tr>
+<td>App for everyone</td>
+<td>App, paper, phone and a person</td>
+</tr>
+<tr>
+<td>Collect all useful data</td>
+<td>A data charter tenants approve</td>
+</tr>
+<tr>
+<td>Automate appliances</td>
+<td>Advise by default, automate only by choice</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Our shared participatory question:</strong> <em>Under what conditions can an AI energy assistant help the different households of a public housing complex share solar energy and its benefits in a way they find fair, understandable and under their control?</em></p>
+<p>It breaks into five questions tenants will decide: <strong>fairness</strong> (how the money is shared), <strong>data</strong> (what the AI may know, who sees it, for how long), <strong>control</strong> (advise or also switch appliances), <strong>access</strong> (how people without a smartphone take part fully) and <strong>governance</strong> (who runs the community and how decisions can be challenged). The question also allows the answer "it can't" for some households.</p>
+<h2>2. Who takes part</h2>
+<p>Not everyone has time to co-create, but everyone should be able to decide. We therefore run two tracks:</p>
+<ul>
+<li><strong>Wide track, every household.</strong> Informed, consulted and voting at the gates, with little time and no smartphone needed.</li>
+<li><strong>Deep track, rotating volunteers (about 30 households).</strong> They co-design and co-create, with childcare, flexible hours and recognition. Their proposals always return to the wide track for a decision.</li>
+</ul>
+<p>Our stakeholder map (deliverable B) shows that the people closest to the technology hold the least power over it. The process must actively reach the groups who are usually absent: elderly people living alone, low-income and migrant families, shift workers, women carers, young people, people with disabilities and tenants without a regular contract. Institutions (ATER Roma, the City, GSE, the provider, Areti) take part as experts and owners, but on fairness and data only tenants vote.</p>
+<h2>3. Levels of participation and decision gates</h2>
+<p>We do not aim for the top level everywhere; we choose the right level for each phase, using the five levels inform, consult, involve, co-design and co-create. Phases 3 and 4 overlap on purpose, so that what citizen science discovers feeds the fairness and data decisions.</p>
+<p><img alt="Tenants decide at four binding gates over nine months" src="../assets/process-timeline.png" /></p>
+<p>At each gate, tenants' choices bind the project:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Month</th>
+<th>What tenants decide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 · Agenda</td>
+<td>2</td>
+<td>Which issues are co-designed first</td>
+</tr>
+<tr>
+<td>2 · Fairness rule</td>
+<td>4</td>
+<td>The rule that shares the money; the provider must implement it</td>
+</tr>
+<tr>
+<td>3 · Data charter</td>
+<td>4</td>
+<td>Which household data may be used, and by whom</td>
+</tr>
+<tr>
+<td>4 · Go or no-go</td>
+<td>7</td>
+<td>Whether to scale, change or stop the pilot, together with ATER</td>
+</tr>
+</tbody>
+</table></div>
+<p>Developers sign these gates in advance, so participation cannot be ignored afterwards. A no-go is a legitimate outcome.</p>
+<h2>4. Methods by purpose</h2>
+<p>Every method does a job in the chain; none is there for decoration. The Open Space → World Café → fishbowl path follows the sequence tested in the REGACE project (Antonucci et al., 2025).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Method</th>
+<th>The task it performs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explore</td>
+<td>Doorstep and walking interviews</td>
+<td>Reach people who never come to meetings; see roofs, meters and shared spaces through tenants' eyes</td>
+</tr>
+<tr>
+<td>Explore</td>
+<td>Focus groups by group</td>
+<td>Hear elderly people, migrant parents and shift workers in a safe setting, at their hours</td>
+</tr>
+<tr>
+<td>Explore</td>
+<td>Participatory mapping</td>
+<td>Locate sun, shade, broken things and gathering points (paper map plus online map)</td>
+</tr>
+<tr>
+<td>Open the agenda</td>
+<td>Open Space day in the courtyard</td>
+<td>Tenants propose and choose the topics to co-design (Gate 1)</td>
+</tr>
+<tr>
+<td>Deliberate</td>
+<td>Fairness assembly (about 25 tenants by stratified lottery, 3 evenings)</td>
+<td>Decide the fairness rule for Gate 2 with a group that mirrors the complex</td>
+</tr>
+<tr>
+<td>Deliberate</td>
+<td>Scenario discussion with the Fair Share Simulator</td>
+<td>Compare rules on concrete families, on screen and on paper</td>
+</tr>
+<tr>
+<td>Deliberate</td>
+<td>Fishbowl</td>
+<td>Make disagreement visible and return results to all tenants</td>
+</tr>
+<tr>
+<td>Generate ideas</td>
+<td>World Café and co-design workshops</td>
+<td>Ideas for messages, alerts, the paper channel and a draft data charter</td>
+</tr>
+<tr>
+<td>Produce knowledge</td>
+<td>Citizen science ("Energy Detectives")</td>
+<td>Energy postcards, smart plugs, diaries and shade photos (deliverable D)</td>
+</tr>
+<tr>
+<td>Test and adapt</td>
+<td>Living lab pilot (3 months) and home usability tests</td>
+<td>Run the assistant with volunteer households and check elderly and non-digital tenants can use it</td>
+</tr>
+</tbody>
+</table></div>
+<p>Three choices shape the set. We do not rely on surveys alone, because a survey cannot explain why a family cooks at 9 pm. Vulnerable groups speak first in their own spaces, then meet the others with their points ready. For the binding fairness decision, a lottery that mirrors the complex replaces self-selected volunteers. Household numbers are planning targets, not results.</p>
+<h2>5. Hybrid architecture</h2>
+<p>Digital tools give the process continuity; they do not copy meetings. Four rules hold throughout:</p>
+<ol>
+<li><strong>Every online step has an offline twin.</strong> Each vote, comment or survey also works on paper, by phone or in person.</li>
+<li><strong>Meet to decide, go online to continue.</strong> Decisions happen face to face; online keeps the thread between meetings.</li>
+<li><strong>Information flows both ways.</strong> Online comments are read aloud on site; on-site results are posted online within 48 hours.</li>
+<li><strong>No smartphone needed.</strong> Full participation is possible without any device, since unequal digital capital is itself a vulnerability (Antonucci, Sorice and Volterrani, 2022).</li>
+</ol>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>On-site (live)</th>
+<th>Online (mostly asynchronous)</th>
+<th>How information moves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outreach</td>
+<td>Doorstep visits, info stand</td>
+<td>WhatsApp broadcast, short videos</td>
+<td>Questions from both sides feed the agenda</td>
+</tr>
+<tr>
+<td>Listening</td>
+<td>Interviews, focus groups</td>
+<td>Short survey, online map</td>
+<td>Weekly summary on the noticeboard and online</td>
+</tr>
+<tr>
+<td>Open agenda</td>
+<td>Open Space day</td>
+<td>Live stream, topic voting for one week</td>
+<td>Online votes added to on-site results</td>
+</tr>
+<tr>
+<td>Fairness and data</td>
+<td>Assembly, fishbowl</td>
+<td>Simulator, comments on drafts</td>
+<td>Online comments read aloud at the next session</td>
+</tr>
+<tr>
+<td>Citizen science</td>
+<td>Data evenings</td>
+<td>App diary, dashboard</td>
+<td>Paper postcards digitised by ambassadors</td>
+</tr>
+<tr>
+<td>Living lab</td>
+<td>Home visits, tests</td>
+<td>Assistant, feedback button</td>
+<td>Monthly "you said, we did" change log</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>CER assembly</td>
+<td>Proxy and remote voting (within CER statutes)</td>
+<td>Plain-language minutes on both channels</td>
+</tr>
+</tbody>
+</table></div>
+<p>Six channels carry one conversation: an <strong>Energy Corner</strong> noticeboard and suggestion box in the courtyard; young <strong>energy ambassadors</strong> who carry voices between paper and screen; a printed <strong>monthly bulletin</strong> in several languages; <strong>WhatsApp</strong> broadcast lists per language; a <strong>web platform</strong> with proposals, the simulator and the data dashboard; and a <strong>phone line</strong> where a person can vote and report for you. The Hybrid Journey Map (deliverable E) follows one tenant through these channels before, during and after the process.</p>
+<p>Online access is not inclusion, so four measures support low digital skills: a weekly printed "sunny hours" calendar, SMS or a call instead of app notifications; a paper version of the simulator with household cards and coins; a help desk where ambassadors build skills rather than replace them; and paper votes that count exactly like online ones, counted in public.</p>
+<h2>6. Facilitation, inclusion and conflict</h2>
+<p>We go to people instead of waiting for them, and recruit through trusted bridges. The target is a fairness assembly that mirrors the complex by age, household type, origin and building.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>How we reach them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elderly tenants</td>
+<td>Doorstep visits, the parish, the local senior centre, the phone line</td>
+</tr>
+<tr>
+<td>Migrant families</td>
+<td>Cultural mediators, community associations, translated leaflets</td>
+</tr>
+<tr>
+<td>Shift workers</td>
+<td>Evening and weekend slots, WhatsApp voice notes, asynchronous voting</td>
+</tr>
+<tr>
+<td>Women carers</td>
+<td>School gates, childcare during sessions, daytime meetings</td>
+</tr>
+<tr>
+<td>Young people</td>
+<td>Paid energy-ambassador roles, schools, sports clubs</td>
+</tr>
+<tr>
+<td>Tenants without a contract</td>
+<td>Trusted third-sector groups; no ID needed to join discussions</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Accessibility.</strong> Plain Italian with key materials translated and mediators present; every activity offered twice (weekday evening and Saturday morning); ground-floor rooms and home visits; large print, audio versions and accessible routes; childcare, snacks and a small voucher for long sessions.</p>
+<p><strong>Power balance: experts on tap, not on top.</strong> Facilitators are neutral (not from ATER or the provider) and are evaluated by participants after each session. Tenants speak first and experts answer questions. Anyone can raise a "say it simply" card. On fairness and data only tenants vote; institutions give opinions.</p>
+<p><strong>Conflict is recorded, not hidden.</strong> The facilitator names each disagreement in a public log; a fishbowl lets both sides explain their reasons; simulator or pilot data are used where facts can help; the vote at the gate decides, with minority views attached. If tenants disagree with the developers, the gates bind: the provider adapts or the pilot pauses, and an external mediator (for example the university) is called before any override.</p>
+<h2>7. Traceability and feedback</h2>
+<p>Every contribution can be followed from the person who made it to the decision it shaped.</p>
+<ul>
+<li><strong>Numbered proposals.</strong> Each proposal gets a number, on paper and online. Its status is public: received, discussed, adopted, changed or refused with reasons.</li>
+<li><strong>A duty to answer.</strong> A change request backed by citizen data goes to the assembly or the provider, who must answer within a month.</li>
+<li><strong>48-hour rule.</strong> Session results are posted on both channels within 48 hours.</li>
+<li><strong>Monthly loop.</strong> A "you said, we did" bulletin and a courtyard return event.</li>
+<li><strong>End of pilot.</strong> Each household receives its own energy postcard in plain language.</li>
+</ul>
+<p>The change log is also the raw material for our evaluation (deliverable G): it lets us compare the final design with the developers' frozen starting design and show what changed because tenants took part.</p>
+<h2>References</h2>
+<ul>
+<li>Antonucci, M. C., Volterrani, A., Serra, M., Cornaro, C., Petitta, M., and Bovesecchi, G. (2025). Transforming risk perception and fostering cooperatively the agri-photovoltaics technology with farmers in five countries: a sociological perspective from the REGACE project. <em>AgriVoltaics Conference Proceedings</em>, 3. <a target="_blank" rel="noopener" href="https://doi.org/10.52825/agripv.v3i.1386">doi:10.52825/agripv.v3i.1386</a></li>
+<li>Antonucci, M. C., Sorice, M., and Volterrani, A. (2022). Social and digital vulnerabilities: the role of participatory processes in the reconfiguration of urban and digital space. <em>Frontiers in Political Science</em>, 4. <a target="_blank" rel="noopener" href="https://doi.org/10.3389/fpos.2022.970958">doi:10.3389/fpos.2022.970958</a></li>
+<li>van Oudheusden, M., Berti Suman, A., Huyse, T., Huyse, H., and Medvecky, F. (2024). The valuable plurality of the citizen sciences. <em>Science &amp; Technology Studies</em>, 37(1).</li>
+</ul></div></article></div></main>
+<footer><div class="wrap"><span>Next Wave · Hybrid Participation Innovation Lab · Tor Vergata · 2026</span><span>Articles shared under their CC BY 4.0 licences.</span></div></footer>
+</body>
+</html>

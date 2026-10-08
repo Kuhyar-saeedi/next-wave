@@ -1,0 +1,190 @@
+[
+  {
+    "date": "2026-10-13",
+    "title": "Article 1: REGACE and agrivoltaics",
+    "summary": "Present Antonucci et al. (2025): how farmers in five countries were involved in shaping agrivoltaic greenhouses.",
+    "kind": "Article",
+    "materials": [
+      {"type": "slides", "deck": "art1", "note": "10 slides · about 10 minutes"},
+      {"type": "paper", "file": "article1-antonucci-2025-regace.pdf", "title": "Original article (PDF)", "note": "AgriVoltaics Conference Proceedings 3 (2025) · CC BY 4.0"}
+    ],
+    "checklist": [
+      "Read the article, at least the abstract, methods, Table 1 and the discussion",
+      "Go through the slides and their speaker notes",
+      "Rehearse once with a timer: 10 minutes",
+      "Pick one discussion question to ask the class"
+    ]
+  },
+  {
+    "date": "2026-10-14",
+    "title": "Steps 1 and 2: the problem and the stakeholders",
+    "summary": "Define the innovation problem and map its stakeholder ecosystem. Deliverables A (Context Brief) and B (Ecosystem Map).",
+    "kind": "Project",
+    "materials": [
+      {"type": "slides", "deck": "step1", "note": "6 questions, one slide each"},
+      {"type": "slides", "deck": "step2", "note": "Includes the Ecosystem Map (deliverable B)"},
+      {"type": "doc", "doc": "a"}
+    ],
+    "asks": [
+      "Step 1: What is the technology and what problem should it solve? Who develops or promotes it? Where will it be implemented? What benefits are expected? What uncertainties, risks or controversies may emerge? Why is participation necessary?",
+      "Step 2: Map actors, interests, knowledge, power, vulnerability and missing voices.",
+      "Required visual: the innovation at the centre; stakeholders by proximity, influence and impact; connections for alliances, dependencies, conflicts and knowledge flows; vulnerable actors highlighted; a short reason why each actor should participate."
+    ],
+    "checklist": [
+      "Be able to explain the idea in two sentences: AI assistant + fairness rule written by tenants",
+      "Know why the third function (sharing the money) is what makes it new",
+      "Learn the map: who is close, who holds power, who is vulnerable, who is missing",
+      "Read the Context Brief (A) once"
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "title": "Article 2: social and digital vulnerabilities",
+    "summary": "Present Antonucci, Sorice and Volterrani (2022): participation in Italy's peripheral, \"liminal\" areas and the role of digital capital.",
+    "kind": "Article",
+    "materials": [
+      {"type": "slides", "deck": "art2", "note": "10 slides · about 10 minutes"},
+      {"type": "paper", "file": "article2-antonucci-sorice-volterrani-2022.pdf", "title": "Original article (PDF)", "note": "Frontiers in Political Science 4 (2022) · CC BY 4.0"}
+    ],
+    "checklist": [
+      "Read the article, at least the introduction, Tables 1 to 3 and the conclusions",
+      "Understand the two key concepts: liminal space and digital capital",
+      "Rehearse once with a timer: 10 minutes",
+      "Note that Tor Bella Monaca appears in the paper: it links straight to our project"
+    ]
+  },
+  {
+    "date": "2026-10-28",
+    "title": "Article 3 and Steps 3 to 4",
+    "summary": "Present van Oudheusden et al. (2024) on citizen sciences, then co-define the participatory challenge and decide the levels of participation.",
+    "kind": "Article + Project",
+    "materials": [
+      {"type": "slides", "deck": "art3", "note": "10 slides · about 10 minutes"},
+      {"type": "paper", "file": "article3-van-oudheusden-2024.pdf", "title": "Original article (PDF)", "note": "Science & Technology Studies 37(1) (2024) · CC BY 4.0"},
+      {"type": "slides", "deck": "step3", "note": "From the developers' problem to a shared question"},
+      {"type": "slides", "deck": "step4", "note": "Five levels, seven phases, four binding gates"}
+    ],
+    "asks": [
+      "Step 3: Write the original problem formulation. Imagine what different actors might add or contest. Rewrite the problem as a shared participatory question.",
+      "Step 4: Different phases may need different levels: inform, consult, involve, co-design, co-create."
+    ],
+    "checklist": [
+      "Read Article 3 (it is a short discussion paper)",
+      "Learn our shared participatory question by heart",
+      "Know the four gates and when they happen (months 2, 4, 4 and 7)",
+      "Be ready for: \"Why not co-create everything?\""
+    ]
+  },
+  {
+    "date": "2026-11-04",
+    "title": "Steps 5 and 6: methods and hybrid design",
+    "summary": "Choose methods by purpose and design the hybrid architecture. Deliverables C (Participation Blueprint) and E (Hybrid Journey Map).",
+    "kind": "Project",
+    "materials": [
+      {"type": "slides", "deck": "step5", "note": "Every method does a job"},
+      {"type": "slides", "deck": "step6", "note": "Includes the Journey Map (deliverable E)"},
+      {"type": "doc", "doc": "c"}
+    ],
+    "asks": [
+      "Step 5: Choose methods because they perform a task: explore, open the agenda, deliberate, generate ideas, produce knowledge, test and adapt.",
+      "Step 6: For every phase, on-site, online or both? Synchronous and asynchronous moments. How information moves between settings. Digital tools for continuity, not to copy meetings. Alternatives for low digital skills.",
+      "Journey Map: before, on-site, online and after, with the connections between moments."
+    ],
+    "checklist": [
+      "For each method, say the task it performs in one sentence",
+      "Explain the 48-hour rule and the energy ambassadors",
+      "Walk through the Journey Map out loud",
+      "Read the Participation Blueprint (C): it is 30% of the grade"
+    ]
+  },
+  {
+    "date": "2026-11-10",
+    "title": "Book 4: co-creation",
+    "summary": "Present Phillips (2025), Embracing the Messy Complexities of Co-Creation.",
+    "kind": "Book",
+    "materials": [
+      {"type": "soon", "title": "Book 4 slides", "note": "We need the book PDF to prepare these"}
+    ],
+    "checklist": [
+      "Share the book PDF with the group",
+      "Read the assigned chapters"
+    ]
+  },
+  {
+    "date": "2026-11-18",
+    "title": "Step 7: citizen science",
+    "summary": "\"Energy Detectives\": tenants produce the knowledge the AI is missing. Deliverable D.",
+    "kind": "Project",
+    "materials": [
+      {"type": "slides", "deck": "step7", "note": "Questions, tracks, quality, ethics, impact"},
+      {"type": "doc", "doc": "d"}
+    ],
+    "asks": [
+      "Formulate research questions. Say what citizens will observe, measure, document, classify or interpret. Who defines the protocol and how is data quality addressed? Include collective interpretation. Show how citizen knowledge influences design, implementation or governance.",
+      "Avoid the extractive model: no unpaid sensors; clear data ownership and privacy; recognise local knowledge; return results; a way to challenge findings."
+    ],
+    "checklist": [
+      "Know RQ1 to RQ3 and the decision each one feeds",
+      "Explain the wide and deep tracks",
+      "Walk through the five steps from a postcard to a change in the AI",
+      "Read the Citizen Science document (D)"
+    ]
+  },
+  {
+    "date": "2026-11-24",
+    "title": "Step 8: the prototype",
+    "summary": "The Fair Share Simulator: tenants try fairness rules on real-looking families before they vote. Deliverable F.",
+    "kind": "Project",
+    "materials": [
+      {"type": "slides", "deck": "step8", "note": "What it is, the rules, how we test it"},
+      {"type": "soon", "title": "Fair Share Simulator", "note": "Interactive prototype, being built"}
+    ],
+    "asks": [
+      "Make one part of the process tangible. The prototype should be usable or testable, not merely described. Explain what you would learn by testing it with real participants."
+    ],
+    "checklist": [
+      "Try the simulator yourself before class",
+      "Know the four rules: Equal, Need, Effort, Floor",
+      "Be ready to demo one scenario live"
+    ]
+  },
+  {
+    "date": "2026-12-02",
+    "title": "Step 9: facilitation and inclusion",
+    "summary": "Reaching beyond the usual participants, and keeping the room fair.",
+    "kind": "Project",
+    "materials": [
+      {"type": "slides", "deck": "step9", "note": "Recruitment, access, power, conflict, traceability"}
+    ],
+    "asks": [
+      "Recruitment, accessibility, power balance, conflict, traceability and feedback."
+    ],
+    "checklist": [
+      "Know how we reach each hard-to-reach group",
+      "Explain \"experts on tap, not on top\"",
+      "Answer: what happens if tenants disagree with the developers?"
+    ]
+  },
+  {
+    "date": "2026-12-09",
+    "title": "Final exam: Step 10 and the pitch",
+    "summary": "Written exam (two questions) and the 10-minute project pitch. Deliverables G (Evaluation) and H (Final Pitch).",
+    "kind": "Exam",
+    "materials": [
+      {"type": "slides", "deck": "pitch", "note": "Deliverable H · 10 minutes"},
+      {"type": "slides", "deck": "step10", "note": "Indicators, before/during/after, the trace"},
+      {"type": "doc", "doc": "g"},
+      {"type": "slides", "deck": "full", "note": "The whole project, for revision"}
+    ],
+    "asks": [
+      "Do not evaluate only satisfaction or numbers. Measure the quality and diversity of participation, whether different kinds of knowledge entered, learning and trust, and above all what changed in the technology because of participation.",
+      "Pitch: 1 min technology, 2 min stakeholders, 2 min hybrid architecture, 2 min citizen science and prototype, 1 min what changes, 1 min evaluation, 1 min risk."
+    ],
+    "checklist": [
+      "Rehearse the pitch with a timer, twice",
+      "Practise the professor's seven questions (see the Project page)",
+      "Revise the three articles and Book 4 for the written questions",
+      "Read the Evaluation document (G)"
+    ]
+  }
+]

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Step 7 — Citizen Science Component</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314213D'/%3E%3Ccircle cx='16' cy='14' r='6.5' fill='%23E8A33D'/%3E%3Cpath d='M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1' stroke='%23F7F5EF' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <svg class="sun-arc" viewBox="0 0 420 280" aria-hidden="true">
+  <path d="M30 250 A185 205 0 0 1 400 250" fill="none" stroke="#F7F5EF" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <g fill="#F7F5EF" fill-opacity=".35"><circle cx="58" cy="160" r="3"/><circle cx="108" cy="92" r="3"/><circle cx="215" cy="46" r="3"/><circle cx="372" cy="160" r="3"/></g>
+  <circle cx="318" cy="88" r="46" fill="#E8A33D" fill-opacity=".14"/>
+  <circle cx="318" cy="88" r="26" fill="#E8A33D"/>
+  <path d="M10 250 H410" stroke="#F7F5EF" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#2E6F95" fill-opacity=".55"><path d="M120 250 l14-22 h46 l-14 22z"/><path d="M190 250 l14-22 h46 l-14 22z"/><path d="M260 250 l14-22 h46 l-14 22z"/></g>
+</svg>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6.5" fill="#E8A33D"/><path d="M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1" stroke="#F7F5EF" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Next Wave</span></a>
+      <nav class="topnav" aria-label="Main"><a href="../index.html">Timeline</a><a href="../project.html">Whole project</a><button type="button" class="theme-toggle">Dark mode</button></nav>
+    </div>
+    <div class="page-head">
+      <a class="crumb" href="../dates/2026-11-18.html">&larr; Wed 18 Nov · Step 7: citizen science</a>
+      <h1>Step 7 — Citizen Science Component</h1>
+      
+      <div class="meta-row"><span class="chip sun">7 slides</span><span class="chip">Wed 18 Nov</span></div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="deck-tools">
+      <button type="button" class="btn primary" data-present="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 14 9-14 9z"/></svg>Present</button>
+      <span class="sec-note" style="margin:0">Arrow keys to move, Esc to exit, N for notes.</span>
+    </div>
+    <div class="deck"><div class="slide" id="s1">
+  <div class="slide-num"><span>1 / 7</span><button type="button" data-present="0">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-cover" style="background:#14213D;color:#F7F5EF;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-size:28px;font-weight:700;color:#E8A33D;letter-spacing:3px;text-transform:uppercase">Hybrid Participation Innovation Lab · Step 7 · 18 November</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-size:104px;font-weight:700;line-height:1.05;color:#F7F5EF">The citizen science component</h1>
+<p style="font-size:36px;line-height:1.3;color:#D9DEE6">"Energy Detectives": tenants produce the knowledge the AI is missing</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:32px;font-weight:700;color:#E8A33D">Next Wave</p>
+<p style="font-size:26px;color:#D9DEE6">Mahsa Shahi · Kuhyar Saeedi · Farida Safdari · Gelila Tsehaye Melesse · Md Nazmul Islam · Pranto Argha Sarker</p>
+</div>
+</section></div>
+  <p class="notes">"Energy Detectives" is our working name for the citizen science strand. It covers deliverable D (2 pages: questions, roles, data, interpretation, ethics, feedback).</p>
+</div><div class="slide" id="s2">
+  <div class="slide-num"><span>2 / 7</span><button type="button" data-present="1">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-questions" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px;text-transform:uppercase">Research questions</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1">Three things we need to know</h2>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;align-items:center;gap:32px;background:#FFFFFF;padding:30px 40px;border-left:8px solid #E8A33D;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#A65A12;min-width:min-content">RQ1</p><p style="font-size:32px;line-height:1.35">When do households really use energy, and what stops them from using it in sunny hours?</p></div>
+<div style="display:flex;align-items:center;gap:32px;background:#FFFFFF;padding:30px 40px;border-left:8px solid #2E6F95;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#2E6F95;min-width:min-content">RQ2</p><p style="font-size:32px;line-height:1.35">Where does the AI forecast go wrong, and for which kinds of households?</p></div>
+<div style="display:flex;align-items:center;gap:32px;background:#FFFFFF;padding:30px 40px;border-left:8px solid #2F7D4F;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#2F7D4F;min-width:min-content">RQ3</p><p style="font-size:32px;line-height:1.35">How would each fairness rule change what real households receive?</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7180">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">RQ1 is about routines and barriers, RQ2 about bias in the AI, RQ3 about the consequences of the fairness choice. Each answer goes to a specific decision: RQ1 to the assistant's design, RQ2 to the model, RQ3 to the fairness assembly.</p>
+</div><div class="slide" id="s3">
+  <div class="slide-num"><span>3 / 7</span><button type="button" data-present="2">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-cycle" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px;text-transform:uppercase">The six-part design</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1">From question to change</h2>
+</div>
+<table style="font-family:'DM Sans', Arial, sans-serif;font-size:25px;color:#14213D;background:#FFFFFF;border-radius:16px;padding:12px 24px">
+<tr><th style="width:20%">Part</th><th style="width:80%">Our answer</th></tr>
+<tr><td><b>Question</b></td><td>RQ1–RQ3: routines, forecast errors, effects of fairness rules</td></tr>
+<tr><td><b>Protocol</b></td><td>Co-written in a workshop by tenants and researchers; tested with 5 households first</td></tr>
+<tr><td><b>Participation</b></td><td>Postcards for all; smart plugs, diaries and shade photos for volunteers</td></tr>
+<tr><td><b>Validation</b></td><td>Diaries checked against meter data; training; uncertainty shown openly</td></tr>
+<tr><td><b>Interpretation</b></td><td>Monthly data evenings where tenants and researchers read results together</td></tr>
+<tr><td><b>Feedback</b></td><td>Findings change the model, the messages and the fairness rule, logged publicly</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7180">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">The professor's six-step model: question, protocol, participation, validation, interpretation, feedback. The key point is that citizens are present in the protocol and the interpretation, not only in data collection.</p>
+</div><div class="slide" id="s4">
+  <div class="slide-num"><span>4 / 7</span><button type="button" data-present="3">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-tracks" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px;text-transform:uppercase">What citizens actually do</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1">Observe, measure, document, classify, interpret</h2>
+</div>
+<div style="flex:1;display:flex;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:36px 40px;border-top:6px solid #2E6F95;border-radius:16px">
+<p style="font-size:24px;font-weight:700;color:#2E6F95;letter-spacing:2px">WIDE TRACK · ALL HOUSEHOLDS</p>
+<p style="font-size:27px;line-height:1.4"><b>Document:</b> a two-week energy postcard, ticking when big appliances run.</p>
+<p style="font-size:27px;line-height:1.4"><b>Classify:</b> "could I have moved this to midday? yes / no / why".</p>
+<p style="font-size:27px;line-height:1.4"><b>Consent:</b> optional sharing of 15-minute meter data.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:36px 40px;border-top:6px solid #E8A33D;border-radius:16px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px">DEEP TRACK · ~30 VOLUNTEERS</p>
+<p style="font-size:27px;line-height:1.4"><b>Measure:</b> smart plugs on the washing machine or water heater.</p>
+<p style="font-size:27px;line-height:1.4"><b>Observe:</b> photos of roof shade at fixed times.</p>
+<p style="font-size:27px;line-height:1.4"><b>Interpret:</b> label data, compare it with the AI forecast, propose changes.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7180">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">The two tracks come from Article 3: wide, low-threshold contribution gives scale and reaches busy people; the deep track keeps citizens in interpretation and avoids the extractive model.</p>
+</div><div class="slide" id="s5">
+  <div class="slide-num"><span>5 / 7</span><button type="button" data-present="4">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-quality" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px;text-transform:uppercase">Data quality and uncertainty</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1">Credible enough for ATER and GSE to listen</h2>
+</div>
+<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:30px 36px;border-radius:16px"><h3 style="font-size:30px;font-weight:700">Who defines the protocol</h3><p style="font-size:26px;line-height:1.4;color:#3D4A5C">Tenants and researchers together, then a 5-household pilot to fix unclear steps.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:30px 36px;border-radius:16px"><h3 style="font-size:30px;font-weight:700">Cross-checks</h3><p style="font-size:26px;line-height:1.4;color:#3D4A5C">Postcards and diaries compared with meter data; mismatches discussed, not deleted.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:30px 36px;border-radius:16px"><h3 style="font-size:30px;font-weight:700">Training and support</h3><p style="font-size:26px;line-height:1.4;color:#3D4A5C">A 30-minute session, a picture guide and an ambassador to call.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:30px 36px;border-radius:16px"><h3 style="font-size:30px;font-weight:700">Honest uncertainty</h3><p style="font-size:26px;line-height:1.4;color:#3D4A5C">Every chart shows how sure we are; small samples are labelled as such.</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7180">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">From Article 3 (CuriousNoses): validated protocols made citizen data impossible to dismiss. We aim for the same credibility with the housing authority and the energy institutions.</p>
+</div><div class="slide" id="s6">
+  <div class="slide-num"><span>6 / 7</span><button type="button" data-present="5">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-ethics" data-transition="fade" style="background:#14213D;color:#F7F5EF;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#E8A33D;letter-spacing:2px;text-transform:uppercase">Avoiding the extractive model</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1;color:#F7F5EF">Tenants are not unpaid sensors</h2>
+</div>
+<div style="flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:22px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Data belongs to the CER</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">The provider only processes it, under the tenants' data charter.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Privacy by design</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">Aggregated by default, deleted after the pilot, GDPR consent per use.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Opt out, no penalty</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">Not sharing data never reduces a household's share.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Results returned</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">Each household gets its own "energy postcard" in plain language.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Right to challenge</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">Any finding can be contested at a data evening and re-checked.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#22325A;padding:28px 32px;border-radius:16px"><h3 style="font-size:28px;font-weight:700;color:#E8A33D">Recognition</h3><p style="font-size:25px;line-height:1.4;color:#D9DEE6">Named credit, certificates and a small allowance for volunteers.</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B8C2D1">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">These six points answer the professor's slide "avoid the extractive model": data ownership, privacy and future use, recognition of local knowledge, returning results in understandable forms, and a mechanism to challenge findings.</p>
+</div><div class="slide" id="s7">
+  <div class="slide-num"><span>7 / 7</span><button type="button" data-present="6">Present from here</button></div>
+  <div class="slide-frame"><section id="s7-impact" data-transition="fade" style="background:#F7F5EF;color:#14213D;font-family:'DM Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px;text-transform:uppercase">How knowledge enters decisions</p>
+<h2 style="font-size:64px;font-weight:700;line-height:1.1">From a postcard to a change in the AI</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:28px;border-top:6px solid #2E6F95;border-radius:16px"><p style="font-size:24px;font-weight:700;color:#2E6F95">1 · DATA</p><p style="font-size:25px;line-height:1.35">Postcards, plugs and photos collected</p></div>
+<x-connector head="end" style="width:32px;color:#A65A12;border-width:4px;align-self:center"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:28px;border-top:6px solid #2E6F95;border-radius:16px"><p style="font-size:24px;font-weight:700;color:#2E6F95">2 · DATA EVENING</p><p style="font-size:25px;line-height:1.35">Tenants and researchers interpret together</p></div>
+<x-connector head="end" style="width:32px;color:#A65A12;border-width:4px;align-self:center"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:28px;border-top:6px solid #E8A33D;border-radius:16px"><p style="font-size:24px;font-weight:700;color:#A65A12">3 · PROPOSAL</p><p style="font-size:25px;line-height:1.35">A written change request with evidence</p></div>
+<x-connector head="end" style="width:32px;color:#A65A12;border-width:4px;align-self:center"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFFFF;padding:28px;border-top:6px solid #E8A33D;border-radius:16px"><p style="font-size:24px;font-weight:700;color:#A65A12">4 · DECISION</p><p style="font-size:25px;line-height:1.35">Assembly or provider must answer within a month</p></div>
+<x-connector head="end" style="width:32px;color:#A65A12;border-width:4px;align-self:center"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#14213D;padding:28px;border-top:6px solid #E8A33D;border-radius:16px"><p style="font-size:24px;font-weight:700;color:#E8A33D">5 · CHANGE LOG</p><p style="font-size:25px;line-height:1.35;color:#F7F5EF">Public record: accepted, changed, or refused with reasons</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FCEBD3;padding:28px 36px;border-left:8px solid #E8A33D;border-radius:16px">
+<p style="font-size:24px;font-weight:700;color:#A65A12;letter-spacing:2px">EXAMPLE</p>
+<p style="font-size:28px;line-height:1.4">Diaries show shift workers can't shift laundry to noon → the assembly adds a "flexibility credit" for night-time water-heater timers → the AI learns a new household type.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7180">Next Wave · Step 7 — Citizen science</p>
+</section></div>
+  <p class="notes">The example is illustrative, a plausible outcome, not a result. The professor will ask "How does citizen-generated knowledge enter a decision?": this five-step path, with a duty to answer, is our answer.</p>
+</div></div>
+  </div>
+</main>
+<script src="../assets/slides.js"></script>
+<footer><div class="wrap"><span>Next Wave · Hybrid Participation Innovation Lab · Tor Vergata · 2026</span><span>Articles shared under their CC BY 4.0 licences.</span></div></footer>
+</body>
+</html>

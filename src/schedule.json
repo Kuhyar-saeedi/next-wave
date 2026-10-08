@@ -137,7 +137,7 @@
     "kind": "Project",
     "materials": [
       {"type": "slides", "deck": "step8", "note": "What it is, the rules, how we test it"},
-      {"type": "soon", "title": "Fair Share Simulator", "note": "Interactive prototype, being built"}
+      {"type": "sim", "note": "The interactive prototype: try the rules yourself"}
     ],
     "asks": [
       "Make one part of the process tangible. The prototype should be usable or testable, not merely described. Explain what you would learn by testing it with real participants."

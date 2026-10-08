@@ -126,7 +126,7 @@ SUN_ARC = """<svg class="sun-arc" viewBox="0 0 420 280" aria-hidden="true">
 
 def page(title, body, depth, mast, active=""):
     r = "../" * depth
-    nav = [("index.html", "Timeline"), ("project.html", "Whole project")]
+    nav = [("index.html", "Timeline"), ("project.html", "Whole project"), ("simulator.html", "Simulator")]
     cur = ' aria-current="page"'
     links = "".join(
         f'<a href="{r}{h}"{cur if active == h else ""}>{t}</a>' for h, t in nav)
@@ -196,6 +196,9 @@ def material_card(m, depth):
         d = DOCS[m["doc"]]
         return (f'<a class="card" href="{r}documents/{m["doc"]}.html"><span class="kind">{icon("doc")}Deliverable {d["code"]}</span>'
                 f'<h3>{esc(d["short"])}</h3><p>Written document, readable online</p></a>')
+    if t == "sim":
+        return (f'<a class="card" href="{r}simulator.html"><span class="kind">{icon("sim")}Prototype · F</span>'
+                f'<h3>Fair Share Simulator</h3><p>{esc(m.get("note", ""))}</p></a>')
     if t == "soon":
         return (f'<div class="card soon"><span class="kind">{icon("soon")}Coming soon</span>'
                 f'<h3>{esc(m["title"])}</h3><p>{esc(m.get("note", ""))}</p></div>')
@@ -211,6 +214,8 @@ def tag_list(item):
             tags.append("Article PDF")
         elif m["type"] == "doc":
             tags.append(f'Deliverable {DOCS[m["doc"]]["code"]}')
+        elif m["type"] == "sim":
+            tags.append("Simulator")
         elif m["type"] == "soon":
             tags.append(m["title"] + " (soon)")
     return "".join(f'<span class="tag">{esc(t)}</span>' for t in tags)
@@ -253,7 +258,7 @@ def build_index():
         <a class="card" href="project.html"><span class="kind">{icon("arrow")}Overview</span><h3>The whole project</h3><p>Deliverables A to H, the professor's questions, and how we are graded.</p></a>
         <a class="card" href="decks/full.html"><span class="kind">{icon("slides")}Slides · {len(decks['full']['order'])}</span><h3>Full project deck</h3><p>All ten steps in one deck.</p></a>
         <a class="card" href="decks/pitch.html"><span class="kind">{icon("play")}Slides · {len(decks['pitch']['order'])}</span><h3>Final pitch</h3><p>The 10-minute presentation for 9 December.</p></a>
-        <div class="card soon"><span class="kind">{icon("sim")}Coming soon</span><h3>Fair Share Simulator</h3><p>The interactive prototype (deliverable F).</p></div>
+        <a class="card" href="simulator.html"><span class="kind">{icon("sim")}Prototype · F</span><h3>Fair Share Simulator</h3><p>Try the fairness rules on six household types.</p></a>
       </div>
     </section>
   </div>
@@ -368,7 +373,7 @@ def build_project():
         ("C", "Participation Blueprint", "5–7 pages: objectives, phases, methods, inclusion, decision points", '<a href="documents/c.html">Read online</a>', "2026-11-04"),
         ("D", "Citizen Science", "2 pages: questions, roles, data, interpretation, ethics, feedback", '<a href="documents/d.html">Read online</a>', "2026-11-18"),
         ("E", "Journey Map", "Visual sequence of online and on-site participation", '<a href="decks/step6.html#s5">Step 6 slides, journey</a>', "2026-11-04"),
-        ("F", "Prototype", "One concrete participatory tool", 'Fair Share Simulator (coming soon)', "2026-11-24"),
+        ("F", "Prototype", "One concrete participatory tool", '<a href="simulator.html">Fair Share Simulator</a>', "2026-11-24"),
         ("G", "Evaluation", "1–2 pages: indicators and before/after logic", '<a href="documents/g.html">Read online</a>', "2026-12-09"),
         ("H", "Final Pitch", "10-minute presentation plus critical questions", '<a href="decks/pitch.html">Pitch slides</a>', "2026-12-09"),
     ]
@@ -407,6 +412,104 @@ def build_project():
     return page("Next Wave · Whole project", body, 0, mast, "project.html")
 
 
+
+def build_simulator():
+    chips = '<span class="chip sun">Deliverable F · prototype</span><span class="chip">Illustrative numbers</span>'
+    mast = page_head("index.html", "Timeline", "Fair Share Simulator",
+                     "Try fairness rules on six household types and see, in euros, what each rule would mean before tenants vote.", chips)
+    def slider(id, label, mn, mx, stp, hint=""):
+        return (f'<div class="ctl"><label for="s-{id}"><span>{label}</span><output id="o-{id}"></output></label>'
+                f'<input type="range" id="s-{id}" min="{mn}" max="{mx}" step="{stp}">'
+                + (f'<small>{hint}</small>' if hint else '') + '</div>')
+    body = f"""<main class="sim"><div class="wrap">
+  <ol class="howto">
+    <li><b>Pick a month.</b> Sunny months make more energy to share.</li>
+    <li><b>Mix the rules.</b> Or start from a preset.</li>
+    <li><b>Click a household</b> to see why it gets that amount.</li>
+  </ol>
+
+  <div class="sim-grid">
+    <aside class="panel controls" aria-label="Controls">
+      <div class="ctl"><label for="s-month"><span>Month</span></label><select id="s-month"></select></div>
+      <div class="ctl"><span class="ctl-title">Start from</span>
+        <div class="presets">
+          <button type="button" class="btn small" data-preset="dev" aria-pressed="false">Developers' default</button>
+          <button type="button" class="btn small" data-preset="equal" aria-pressed="false">Equal split</button>
+          <button type="button" class="btn small" data-preset="mix" aria-pressed="false">Tenant mix (example)</button>
+        </div>
+      </div>
+      <fieldset class="mix"><legend>Rule mix</legend>
+        {slider("equal", '<span class="sw sw-equal"></span>Equal', 0, 100, 5, "Same for every household")}
+        {slider("need", '<span class="sw sw-need"></span>Need', 0, 100, 5, "More for larger and low-income households")}
+        {slider("effort", '<span class="sw sw-effort"></span>Effort', 0, 100, 5, "More for using energy in sunny hours")}
+        {slider("floor", '<span class="sw sw-floor"></span>Floor', 0, 100, 10, "Paid to everyone first, then the mix shares the rest")}
+      </fieldset>
+      <label class="check"><input type="checkbox" id="s-respond"><span>Households respond to the effort reward <small>Flexible homes move some evening use to midday</small></span></label>
+      <details class="assume"><summary>Assumptions you can change</summary>
+        {slider("kwp", "Solar plant on the roofs", 50, 200, 10)}
+        {slider("pz", "Market price of electricity", 60, 200, 5, "Lower prices raise the incentive, up to its cap")}
+        {slider("fund", "Kept for maintenance and a community fund", 0, 30, 5)}
+      </details>
+    </aside>
+
+    <div class="results">
+      <div class="kpis" aria-live="polite">
+        <div class="kpi"><span>Shared energy · <span id="k-month"></span></span><b id="k-shared"></b></div>
+        <div class="kpi"><span>Money to share this month</span><b id="k-pot"></b></div>
+        <div class="kpi"><span>Average per household</span><b id="k-avg"></b></div>
+        <div class="kpi"><span>Money to share per year</span><b id="k-year"></b></div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head"><h2>One average day</h2><p>Energy is "shared" when the roof produces it and the building uses it in the same hour. Only shared energy earns the incentive (<span id="k-tariff"></span>).</p></div>
+        <div class="legend"><span><i class="sw sw-solar"></i>Solar production</span><span><i class="sw sw-demand"></i>Use by the 60 homes</span><span><i class="sw sw-shared"></i>Shared energy</span><span style="color:var(--muted)">Power in kW</span></div>
+        <svg id="day-chart" viewBox="0 0 720 260" role="img" aria-label="Solar production and household use over an average day"></svg>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>What each household gets this month</h2><p>One bar per household type; the building has ten of each. The thin line marks an equal split.</p></div>
+        <div class="legend"><span><i class="sw sw-floor"></i>Floor</span><span><i class="sw sw-equal"></i>Equal</span><span><i class="sw sw-need"></i>Need</span><span><i class="sw sw-effort"></i>Effort</span><span><i class="sw-line"></i>Equal split</span></div>
+        <div id="shares" class="shares"></div>
+        <button type="button" class="linkbtn" id="toggle-table">Show as table</button>
+        <div id="share-table" class="table-wrap" hidden></div>
+      </section>
+
+      <section class="panel why" id="why" aria-live="polite"></section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>What data does this mix need?</h2><p>Each rule needs different information about households. Tenants decide this in the data charter (Gate 3).</p></div>
+        <ul class="privacy">
+          <li id="pv-none"><b>Nothing personal</b><span>Equal and Floor need only the list of members.</span></li>
+          <li id="pv-need"><b>Household size and income</b><span>Needed by the Need rule. Sensitive: who sees it, and how is it checked?</span></li>
+          <li id="pv-effort"><b>Hourly meter data</b><span>Needed by the Effort rule. Shows when people are at home.</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="sim-notes">
+    <div class="sec-head"><h2 class="sec-title">How the numbers are made</h2><p class="sec-note">Every figure is an illustration for discussion, not a forecast for a real building.</p></div>
+    <div class="study"><div class="prose">
+      <ul>
+        <li><b>Incentive.</b> Shared energy earns a premium tariff of €80/MWh plus a variable part that rises when market prices fall, capped at €120/MWh for plants up to 200 kW, paid for 20 years (DM 414/2023). Lazio adds €4/MWh, and ARERA returns about €8/MWh. Sources: <a href="https://www.assolombarda.it/servizi/energia/informazioni/decreto-cer-pubblicati-i-criteri-di-incentivazione-per-lenergia-condivisa" target="_blank" rel="noopener">Assolombarda</a>, <a href="https://www.vr.camcom.gov.it/sites/default/files/2025-07/Incentivi%20per%20le%20CACER%20e%20valore%20soglia.pdf" target="_blank" rel="noopener">CCIAA Verona</a>.</li>
+        <li><b>Solar production.</b> About 1,500 kWh per kWp per year, spread by month and over daylight hours. This is a typical value for a south-facing roof in Rome, not a measurement.</li>
+        <li><b>Households.</b> 60 homes: ten of each of the six fictional types. Their daily use and hourly patterns are invented to be plausible; the citizen science strand (Step 7) would replace them with real diaries.</li>
+        <li><b>Rules.</b> The Floor is paid first. The rest is split by the mix: Equal per household; Need by points (one per person, two more for low income); Effort by each home's part of the shared energy, hour by hour.</li>
+        <li><b>Households still pay their normal bills.</b> This is the extra money the community earns. The rules also require surplus beyond a threshold to go to consumers or social purposes, which a tenant-written rule respects.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="paper">
+    <div class="sec-head"><h2 class="sec-title">Paper version</h2><p class="sec-note">For the table version at the fairness assembly: print the household cards and the results for the current mix.</p></div>
+    <button type="button" class="btn primary" id="print">Print cards and results</button>
+    <div id="cards" class="cards"></div>
+  </section>
+</div></main>
+<script src="assets/sim.js"></script>"""
+    return page("Fair Share Simulator", body, 0, mast, "simulator.html")
+
+
 # ---------------------------------------------------------------- write
 def main():
     if OUT.exists():
@@ -418,6 +521,7 @@ def main():
     shutil.copytree(SRC / "papers", OUT / "papers")
     (OUT / "index.html").write_text(build_index())
     (OUT / "project.html").write_text(build_project())
+    (OUT / "simulator.html").write_text(build_simulator())
     for i, it in enumerate(schedule):
         (OUT / "dates" / f"{it['date']}.html").write_text(build_date(i, it))
     for key in decks:

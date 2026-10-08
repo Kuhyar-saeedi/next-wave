@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Fair Share Simulator</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314213D'/%3E%3Ccircle cx='16' cy='14' r='6.5' fill='%23E8A33D'/%3E%3Cpath d='M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1' stroke='%23F7F5EF' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <svg class="sun-arc" viewBox="0 0 420 280" aria-hidden="true">
+  <path d="M30 250 A185 205 0 0 1 400 250" fill="none" stroke="#F7F5EF" stroke-opacity=".22" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <g fill="#F7F5EF" fill-opacity=".35"><circle cx="58" cy="160" r="3"/><circle cx="108" cy="92" r="3"/><circle cx="215" cy="46" r="3"/><circle cx="372" cy="160" r="3"/></g>
+  <circle cx="318" cy="88" r="46" fill="#E8A33D" fill-opacity=".14"/>
+  <circle cx="318" cy="88" r="26" fill="#E8A33D"/>
+  <path d="M10 250 H410" stroke="#F7F5EF" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#2E6F95" fill-opacity=".55"><path d="M120 250 l14-22 h46 l-14 22z"/><path d="M190 250 l14-22 h46 l-14 22z"/><path d="M260 250 l14-22 h46 l-14 22z"/></g>
+</svg>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6.5" fill="#E8A33D"/><path d="M3 23c3.5-3 6.5-3 10 0s6.5 3 10 0 4.5-2 6-1" stroke="#F7F5EF" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Next Wave</span></a>
+      <nav class="topnav" aria-label="Main"><a href="index.html">Timeline</a><a href="project.html">Whole project</a><a href="simulator.html" aria-current="page">Simulator</a><button type="button" class="theme-toggle">Dark mode</button></nav>
+    </div>
+    <div class="page-head">
+      <a class="crumb" href="index.html">&larr; Timeline</a>
+      <h1>Fair Share Simulator</h1>
+      <p class="sub">Try fairness rules on six household types and see, in euros, what each rule would mean before tenants vote.</p>
+      <div class="meta-row"><span class="chip sun">Deliverable F · prototype</span><span class="chip">Illustrative numbers</span></div>
+    </div>
+  </div>
+</header>
+<main class="sim"><div class="wrap">
+  <ol class="howto">
+    <li><b>Pick a month.</b> Sunny months make more energy to share.</li>
+    <li><b>Mix the rules.</b> Or start from a preset.</li>
+    <li><b>Click a household</b> to see why it gets that amount.</li>
+  </ol>
+
+  <div class="sim-grid">
+    <aside class="panel controls" aria-label="Controls">
+      <div class="ctl"><label for="s-month"><span>Month</span></label><select id="s-month"></select></div>
+      <div class="ctl"><span class="ctl-title">Start from</span>
+        <div class="presets">
+          <button type="button" class="btn small" data-preset="dev" aria-pressed="false">Developers' default</button>
+          <button type="button" class="btn small" data-preset="equal" aria-pressed="false">Equal split</button>
+          <button type="button" class="btn small" data-preset="mix" aria-pressed="false">Tenant mix (example)</button>
+        </div>
+      </div>
+      <fieldset class="mix"><legend>Rule mix</legend>
+        <div class="ctl"><label for="s-equal"><span><span class="sw sw-equal"></span>Equal</span><output id="o-equal"></output></label><input type="range" id="s-equal" min="0" max="100" step="5"><small>Same for every household</small></div>
+        <div class="ctl"><label for="s-need"><span><span class="sw sw-need"></span>Need</span><output id="o-need"></output></label><input type="range" id="s-need" min="0" max="100" step="5"><small>More for larger and low-income households</small></div>
+        <div class="ctl"><label for="s-effort"><span><span class="sw sw-effort"></span>Effort</span><output id="o-effort"></output></label><input type="range" id="s-effort" min="0" max="100" step="5"><small>More for using energy in sunny hours</small></div>
+        <div class="ctl"><label for="s-floor"><span><span class="sw sw-floor"></span>Floor</span><output id="o-floor"></output></label><input type="range" id="s-floor" min="0" max="100" step="10"><small>Paid to everyone first, then the mix shares the rest</small></div>
+      </fieldset>
+      <label class="check"><input type="checkbox" id="s-respond"><span>Households respond to the effort reward <small>Flexible homes move some evening use to midday</small></span></label>
+      <details class="assume"><summary>Assumptions you can change</summary>
+        <div class="ctl"><label for="s-kwp"><span>Solar plant on the roofs</span><output id="o-kwp"></output></label><input type="range" id="s-kwp" min="50" max="200" step="10"></div>
+        <div class="ctl"><label for="s-pz"><span>Market price of electricity</span><output id="o-pz"></output></label><input type="range" id="s-pz" min="60" max="200" step="5"><small>Lower prices raise the incentive, up to its cap</small></div>
+        <div class="ctl"><label for="s-fund"><span>Kept for maintenance and a community fund</span><output id="o-fund"></output></label><input type="range" id="s-fund" min="0" max="30" step="5"></div>
+      </details>
+    </aside>
+
+    <div class="results">
+      <div class="kpis" aria-live="polite">
+        <div class="kpi"><span>Shared energy · <span id="k-month"></span></span><b id="k-shared"></b></div>
+        <div class="kpi"><span>Money to share this month</span><b id="k-pot"></b></div>
+        <div class="kpi"><span>Average per household</span><b id="k-avg"></b></div>
+        <div class="kpi"><span>Money to share per year</span><b id="k-year"></b></div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head"><h2>One average day</h2><p>Energy is "shared" when the roof produces it and the building uses it in the same hour. Only shared energy earns the incentive (<span id="k-tariff"></span>).</p></div>
+        <div class="legend"><span><i class="sw sw-solar"></i>Solar production</span><span><i class="sw sw-demand"></i>Use by the 60 homes</span><span><i class="sw sw-shared"></i>Shared energy</span><span style="color:var(--muted)">Power in kW</span></div>
+        <svg id="day-chart" viewBox="0 0 720 260" role="img" aria-label="Solar production and household use over an average day"></svg>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>What each household gets this month</h2><p>One bar per household type; the building has ten of each. The thin line marks an equal split.</p></div>
+        <div class="legend"><span><i class="sw sw-floor"></i>Floor</span><span><i class="sw sw-equal"></i>Equal</span><span><i class="sw sw-need"></i>Need</span><span><i class="sw sw-effort"></i>Effort</span><span><i class="sw-line"></i>Equal split</span></div>
+        <div id="shares" class="shares"></div>
+        <button type="button" class="linkbtn" id="toggle-table">Show as table</button>
+        <div id="share-table" class="table-wrap" hidden></div>
+      </section>
+
+      <section class="panel why" id="why" aria-live="polite"></section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>What data does this mix need?</h2><p>Each rule needs different information about households. Tenants decide this in the data charter (Gate 3).</p></div>
+        <ul class="privacy">
+          <li id="pv-none"><b>Nothing personal</b><span>Equal and Floor need only the list of members.</span></li>
+          <li id="pv-need"><b>Household size and income</b><span>Needed by the Need rule. Sensitive: who sees it, and how is it checked?</span></li>
+          <li id="pv-effort"><b>Hourly meter data</b><span>Needed by the Effort rule. Shows when people are at home.</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="sim-notes">
+    <div class="sec-head"><h2 class="sec-title">How the numbers are made</h2><p class="sec-note">Every figure is an illustration for discussion, not a forecast for a real building.</p></div>
+    <div class="study"><div class="prose">
+      <ul>
+        <li><b>Incentive.</b> Shared energy earns a premium tariff of €80/MWh plus a variable part that rises when market prices fall, capped at €120/MWh for plants up to 200 kW, paid for 20 years (DM 414/2023). Lazio adds €4/MWh, and ARERA returns about €8/MWh. Sources: <a href="https://www.assolombarda.it/servizi/energia/informazioni/decreto-cer-pubblicati-i-criteri-di-incentivazione-per-lenergia-condivisa" target="_blank" rel="noopener">Assolombarda</a>, <a href="https://www.vr.camcom.gov.it/sites/default/files/2025-07/Incentivi%20per%20le%20CACER%20e%20valore%20soglia.pdf" target="_blank" rel="noopener">CCIAA Verona</a>.</li>
+        <li><b>Solar production.</b> About 1,500 kWh per kWp per year, spread by month and over daylight hours. This is a typical value for a south-facing roof in Rome, not a measurement.</li>
+        <li><b>Households.</b> 60 homes: ten of each of the six fictional types. Their daily use and hourly patterns are invented to be plausible; the citizen science strand (Step 7) would replace them with real diaries.</li>
+        <li><b>Rules.</b> The Floor is paid first. The rest is split by the mix: Equal per household; Need by points (one per person, two more for low income); Effort by each home's part of the shared energy, hour by hour.</li>
+        <li><b>Households still pay their normal bills.</b> This is the extra money the community earns. The rules also require surplus beyond a threshold to go to consumers or social purposes, which a tenant-written rule respects.</li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="paper">
+    <div class="sec-head"><h2 class="sec-title">Paper version</h2><p class="sec-note">For the table version at the fairness assembly: print the household cards and the results for the current mix.</p></div>
+    <button type="button" class="btn primary" id="print">Print cards and results</button>
+    <div id="cards" class="cards"></div>
+  </section>
+</div></main>
+<script src="assets/sim.js"></script>
+<footer><div class="wrap"><span>Next Wave · Hybrid Participation Innovation Lab · Tor Vergata · 2026</span><span>Articles shared under their CC BY 4.0 licences.</span></div></footer>
+</body>
+</html>

@@ -56,7 +56,7 @@ Developers sign these gates in advance, so participation cannot be ignored after
 
 ## 4. Methods by purpose
 
-Every method does a job in the chain; none is there for decoration. The Open Space → World Café → fishbowl path follows the sequence tested in the REGACE project (Antonucci et al., 2025).
+Every method does a job in the chain; none is there for decoration. We reuse the three methods combined in the REGACE project (Open Space, World Café and a fishbowl; Antonucci et al., 2025), each placed where its job is needed.
 
 | Purpose | Method | The task it performs |
 | --- | --- | --- |

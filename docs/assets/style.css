@@ -177,7 +177,8 @@ details.q div { color: var(--ink-2); margin-top: 6px; }
 /* Slide canvas reset: reproduces the Slides format defaults */
 .slide-frame section { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box; line-height: 1.4; }
 .slide-frame section * { box-sizing: border-box; margin: 0; }
-.slide-frame section div { display: flex; flex-direction: column; min-width: 0; }
+.slide-frame section div { min-width: 0; }
+.slide-frame section div:not([style*="display"]) { display: flex; flex-direction: column; }
 .slide-frame section h1 { font-size: 96px; font-weight: 600; line-height: 1.1; }
 .slide-frame section h2 { font-size: 64px; font-weight: 600; line-height: 1.15; }
 .slide-frame section h3 { font-size: 44px; font-weight: 600; line-height: 1.2; }

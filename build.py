@@ -32,6 +32,7 @@ I = {
     "soon": '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
     "play": '<path d="m6 3 14 9-14 9z"/>',
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    "down": '<path d="M12 3v12M6 11l6 6 6-6M4 21h16"/>',
     "sim": '<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/>',
 }
 
@@ -80,6 +81,22 @@ DECK_LABEL = {
 }
 for i in range(1, 11):
     DECK_LABEL[f"step{i}"] = f"Step {i} slides"
+
+
+def downloads(key):
+    """(pdf, pptx) file names in src/downloads for a deck, if exported."""
+    import re as _re
+    stem = "Next-Wave-" + _re.sub(r"-+", "-", _re.sub(r"[^A-Za-z0-9]+", "-", _re.sub(r"[—–]", "-", deck_title(key))).strip("-"))
+    pdf, ppt = SRC / "downloads" / f"{stem}.pdf", SRC / "downloads" / f"{stem}.pptx"
+    return (pdf.name, ppt.name) if pdf.exists() and ppt.exists() else None
+
+
+def download_links(key, r, cls="dl"):
+    d = downloads(key)
+    if not d:
+        return ""
+    return (f'<span class="{cls}"><a href="{r}downloads/{d[0]}" download>{icon("down")}PDF</a>'
+            f'<a href="{r}downloads/{d[1]}" download>{icon("down")}PowerPoint</a></span>')
 
 
 def deck_title(key):
@@ -187,8 +204,8 @@ def material_card(m, depth):
     t = m["type"]
     if t == "slides":
         n = len(decks[m["deck"]]["order"])
-        return (f'<a class="card" href="{r}decks/{m["deck"]}.html"><span class="kind">{icon("slides")}Slides · {n}</span>'
-                f'<h3>{esc(deck_title(m["deck"]))}</h3><p>{esc(m.get("note", ""))}</p></a>')
+        return (f'<div class="card has-dl"><a class="card-link" href="{r}decks/{m["deck"]}.html"><span class="kind">{icon("slides")}Slides · {n}</span>'
+                f'<h3>{esc(deck_title(m["deck"]))}</h3><p>{esc(m.get("note", ""))}</p></a>{download_links(m["deck"], r)}</div>')
     if t == "paper":
         return (f'<a class="card" href="{r}papers/{m["file"]}" target="_blank" rel="noopener"><span class="kind">{icon("paper")}Article PDF</span>'
                 f'<h3>{esc(m["title"])}</h3><p>{esc(m.get("note", ""))}</p></a>')
@@ -336,6 +353,7 @@ def build_deck(key):
   <div class="wrap">
     <div class="deck-tools">
       <button type="button" class="btn primary" data-present="0">{icon("play")}Present</button>
+      {download_links(key, "../", "dl-btns")}
       <span class="sec-note" style="margin:0">Arrow keys to move, Esc to exit, N for notes.</span>
     </div>
     <div class="deck">{''.join(slides)}</div>
@@ -519,6 +537,8 @@ def main():
     (OUT / "documents").mkdir()
     shutil.copytree(SRC / "assets", OUT / "assets")
     shutil.copytree(SRC / "papers", OUT / "papers")
+    if (SRC / "downloads").exists():
+        shutil.copytree(SRC / "downloads", OUT / "downloads")
     (OUT / "index.html").write_text(build_index())
     (OUT / "project.html").write_text(build_project())
     (OUT / "simulator.html").write_text(build_simulator())

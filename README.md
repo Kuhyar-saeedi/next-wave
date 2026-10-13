@@ -20,6 +20,16 @@ build.py             builds the site into docs/
 docs/                the published site (GitHub Pages serves this folder)
 ```
 
+## Slide downloads (PDF and PowerPoint)
+
+Each deck can be downloaded as a PDF and a PowerPoint file, slides only (no speaker notes).
+The slides are rendered exactly as on the site; the PowerPoint holds one full-size picture per slide.
+After changing any slides, regenerate them (needs Playwright with Chromium and python-pptx):
+
+```
+python3 export_slides.py
+```
+
 ## Update the site
 
 ```
